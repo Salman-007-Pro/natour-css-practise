@@ -1,0 +1,59 @@
+body {
+  padding: 3rem;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $gray;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.heading-primary {
+  color: $white;
+  margin-bottom: 6rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  &--main {
+    @include heading-setting(3.5rem, 400, 6rem);
+    animation: moveinleft 1.2s ease-in-out;
+    -webkit-animation: moveinleft 1.2s ease-in-out;
+  }
+  &--sub {
+    @include heading-setting(1.75rem, 700, 2rem);
+    animation: moveinleft 1.2s ease-in-out;
+    -webkit-animation: moveinright 1.2s ease-in-out;
+  }
+}
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, $Light_green, $Dark_green);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  letter-spacing: 0.2rem;
+  &:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    -webkit-transform: skew(15deg, 2deg) scale(1.1);
+    -moz-transform: skew(15deg, 2deg) scale(1.1);
+    -ms-transform: skew(15deg, 2deg) scale(1.1);
+    -o-transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($dark_black, 0.2);
+  }
+}
+.heading-tertiary{
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.paragraph{
+  font-size: 1.6rem;
+  text-align: justify;
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}

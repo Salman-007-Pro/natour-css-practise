@@ -1,0 +1,18 @@
+@mixin heading-setting($letter, $weight, $font) {
+  letter-spacing: $letter;
+  font-weight: $weight;
+  font-size: $font;
+  display: block;
+}
+@mixin clear-fix {
+  &::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin cal-width-col($col-start,$col-end){
+  $ce:$col-end - 1;
+  $cs:$col-start - 1;
+  width: calc((#{$col-start} * ((100% - #{$ce} * #{$gutter-horizontal}) / #{$col-end})) + #{$cs} * #{$gutter-horizontal});
+}

@@ -1,0 +1,180 @@
+.card {
+  //background-color: orangered;
+  perspective: 200rem;
+  position: relative;
+  height: 50rem;
+  //functionality
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    height: inherit;
+    width: 100%;
+    box-shadow: 0 1.5rem 4rem rgba($dark_black, 0.15);
+    &--front {
+      background-color: $white;
+    }
+    &--back {
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $Light_green,
+          $Dark_green
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+    }
+  }
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+  }
+  //front style
+  &__picture {
+    background-position: center;
+    background-size: cover;
+    height: 45%;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $Light_green,
+          $Dark_green
+        ),
+        url(../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    position: absolute;
+    top: 13rem;
+    right: 2rem;
+    color: $white;
+    text-transform: uppercase;
+    text-align: right;
+    width: 75%;
+  }
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($Light_green, 0.8),
+        rgba($Dark_green, 0.8)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-tertiary-dark, 0.8)
+      );
+    }
+  }
+  &__details {
+    padding: 3rem;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    ul {
+      list-style: none;
+      margin: 0 auto;
+      width: 80%;
+      li {
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $dark_gray;
+        }
+      }
+    }
+  }
+  //back style
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+  &__price-box {
+    text-align: center;
+    color: $white;
+    margin-bottom: 8rem;
+  }
+  &__price-only {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}
